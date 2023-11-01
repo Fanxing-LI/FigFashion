@@ -1,0 +1,54 @@
+font.family : serif
+font.serif : Times New Roman + SimSun
+font.size : 8
+font.style : normal
+
+mathtext.fontset : stix
+
+figure.figsize : 3.5, 2.5
+figure.autolayout : False
+figure.constrained_layout.use : False
+figure.constrained_layout.h_pad:  0.04167   # Padding around axes objects. Float representing
+figure.constrained_layout.w_pad:  0.04167  # inches. Default is 3/72 inches (3 points)
+figure.constrained_layout.hspace: 0.02      # Space between subplot groups. Float representing
+figure.constrained_layout.wspace: 0.02      # a fraction of the subplot widths being separated.
+
+figure.subplot.left : 0
+figure.subplot.right : 1
+figure.subplot.bottom : 0
+figure.subplot.top : 1
+figure.subplot.wspace: 0.02
+figure.subplot.hspace: 0.02
+
+lines.linewidth : 1
+lines.markersize : 2
+
+xtick.labelsize : 9
+ytick.labelsize : 9
+
+axes.labelsize : 10
+axes.titlesize : 10
+axes.grid : True
+axes.labelpad : 0
+axes.titlepad : 3
+axes.xmargin : 0.
+axes.ymargin : 0.
+axes.zmargin : 0.
+
+grid.linewidth : 0.5
+
+legend.fancybox : False
+legend.fontsize : 9
+legend.framealpha : 1
+legend.edgecolor: black
+legend.labelspacing : 0.2
+legend.borderpad : 0.3
+legend.borderaxespad : 0.4
+
+patch.linewidth : 0.5
+
+axes.linewidth : 0.5
+
+savefig.dpi : 600
+# savefig.bbox : tight
+savefig.pad_inches : 0.01
