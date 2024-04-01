@@ -2,7 +2,7 @@ from matplotlib import pyplot as plt
 from typing import List, Literal
 import numpy as np
 from matplotlib import rcParams
-
+import  os
 
 class FigFon:
     """noting that
@@ -12,20 +12,20 @@ class FigFon:
 
     def __init__(self):
         from matplotlib import font_manager
-        font_path = "fonts/times simsun.ttf"
+        font_path = f"{os.path.dirname(os.path.abspath(__file__))}/fonts/times simsun.ttf"
         font_manager.fontManager.addfont(font_path)
         self.prop = font_manager.FontProperties(fname=font_path).get_name()
 
     @staticmethod
     def _set_fashion_IEEE():
         obj = FigFon()
-        plt.style.use("styles/IEEE.mplstyle")
+        plt.style.use(f"{os.path.dirname(os.path.abspath(__file__))}/styles/IEEE.mplstyle")
         rcParams["font.serif"] = obj.prop
 
     @staticmethod
     def _set_fashion_GB():
         obj = FigFon()
-        plt.style.use("styles/GB.mplstyle")
+        plt.style.use(f"{os.path.dirname(os.path.abspath(__file__))}/styles/GB.mplstyle")
         rcParams["font.serif"] = obj.prop
 
     @staticmethod
