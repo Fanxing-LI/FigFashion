@@ -60,16 +60,16 @@ def example():
 
         axeses[-1, 0].set_xlabel("xlabel1 ")
         axeses[-1, 1].set_xlabel("xlabel2 坐标轴")
-        axeses[3, 0].set_ylabel("ylabel ")
+        axeses[2, 0].set_ylabel("ylabel ")
         axeses[1, 0].set_ylabel("ylabel2 $ylabel$")
         legends1 = ["legend1", "legend2", "legend3", "legend4"] * 3
         legends2 = ["a", "b", "c", "d"] * 3
         FigFon.set_shared_legend(lines, legends2)
-        plt.savefig("figs/share_double" + row.__str__() + col.__str__() + "_" + isHigh.__str__() + ".png")
+        # plt.savefig("figs/share_double" + row.__str__() + col.__str__() + "_" + isHigh.__str__() + ".png")
         plt.show()
 
     FigFon.set_fashion("IEEE")
-    single_plot(1, 1, 1)
+    shared_plot(3, 2, 1)
 
 
 if __name__ == "__main__":
