@@ -23,11 +23,11 @@ figure.subplot.hspace: 0.02
 lines.linewidth : 1
 lines.markersize : 2
 
-xtick.labelsize : 9
-ytick.labelsize : 9
+xtick.labelsize : 7
+ytick.labelsize : 7
 
-axes.labelsize : 10
-axes.titlesize : 10
+axes.labelsize : 7
+axes.titlesize : 8
 axes.grid : True
 axes.labelpad : 0
 axes.titlepad : 3
@@ -38,7 +38,7 @@ axes.zmargin : 0.
 grid.linewidth : 0.5
 
 legend.fancybox : False
-legend.fontsize : 9
+legend.fontsize : 7
 legend.framealpha : 1
 legend.edgecolor: black
 legend.labelspacing : 0.2

@@ -2,8 +2,8 @@ from matplotlib import pyplot as plt
 from typing import List, Literal
 import numpy as np
 from matplotlib import rcParams
-
-
+import os, sys
+root = os.path.dirname(os.path.abspath(__file__))
 class FigFon:
     """noting that
     all the figure size will be set as Golden ratio with width fixed as required,
@@ -12,20 +12,20 @@ class FigFon:
 
     def __init__(self):
         from matplotlib import font_manager
-        font_path = "fonts/times simsun.ttf"
+        font_path = root + "/fonts/times simsun.ttf"
         font_manager.fontManager.addfont(font_path)
         self.prop = font_manager.FontProperties(fname=font_path).get_name()
 
     @staticmethod
     def _set_fashion_IEEE():
         obj = FigFon()
-        plt.style.use("styles/IEEE.mplstyle")
+        plt.style.use(root+"/styles/IEEE.mplstyle")
         rcParams["font.serif"] = obj.prop
 
     @staticmethod
     def _set_fashion_GB():
         obj = FigFon()
-        plt.style.use("styles/GB.mplstyle")
+        plt.style.use(root+"/styles/GB.mplstyle")
         rcParams["font.serif"] = obj.prop
 
     @staticmethod
@@ -36,6 +36,7 @@ class FigFon:
             FigName: str = "",
             sharex: str = False,
             sharey: str = False,
+            share_legend: bool = False,
             Border: tuple = (0, 0, 1, 1)
     )->plt.figure:
 
@@ -57,6 +58,7 @@ class FigFon:
                                  sharex=sharex,
                                  sharey=sharey
                                  )
+
         tight = {"pad": 0.1, "w_pad": 0.6, "h_pad": 0.4, "rect": Border}
         fig.set_tight_layout(tight)
         return fig, axes
@@ -98,8 +100,10 @@ class FigFon:
         plt.gcf().set_tight_layout(tight)
         plt.figlegend(handles, labels,
                       loc="lower center",
-                      bbox_to_anchor=(0.5, -0.00),
-                      ncol=RowVolumn)
+                      # loc="lower right",
+                      bbox_to_anchor=(0.5, -0.03,0.1,0.1),
+                      ncol=RowVolumn,
+                      frameon=False)
 
     def get_axes_from_figure(self):
         pass
