@@ -3,7 +3,12 @@ from typing import List, Literal
 import numpy as np
 from matplotlib import rcParams
 import os, sys
+from colors import colorsets
+
 root = os.path.dirname(os.path.abspath(__file__))
+
+
+
 class FigFon:
     """noting that
     all the figure size will be set as Golden ratio with width fixed as required,
@@ -19,26 +24,26 @@ class FigFon:
     @staticmethod
     def _set_fashion_IEEE():
         obj = FigFon()
-        plt.style.use(root+"/styles/IEEE.mplstyle")
+        plt.style.use(root + "/styles/IEEE.mplstyle")
         rcParams["font.serif"] = obj.prop
 
     @staticmethod
     def _set_fashion_GB():
         obj = FigFon()
-        plt.style.use(root+"/styles/GB.mplstyle")
+        plt.style.use(root + "/styles/GB.mplstyle")
         rcParams["font.serif"] = obj.prop
 
     @staticmethod
     def get_figure_axes(
             SubFigSize: tuple = (1, 1),
             HeightScale: float = 1,
-            Column: int = 2,    # double columns or single
+            Column: int = 2,  # double columns or single
             FigName: str = "",
             sharex: str = False,
             sharey: str = False,
             share_legend: bool = False,
             Border: tuple = (0, 0, 1, 1)
-    )->plt.figure:
+    ) -> plt.figure:
 
         Width = [3.5, 7.16]
         Height = 2.5
@@ -65,13 +70,15 @@ class FigFon:
 
     @staticmethod
     def set_fashion(fashion: str = "IEEE"):
+        colors = colorsets["Modern Scientific"]
+        plt.rcParams['axes.prop_cycle'] = plt.cycler('color', colors)
         if fashion == "IEEE":
             FigFon._set_fashion_IEEE()
             pass
         elif fashion == "GB":
             FigFon._set_fashion_GB()
             plt.rcParams["font.serif"] = ["Times New Roman", "SimSun"]
-            plt.rcParams['font.family']=' Times New Roman, SimSun'
+            plt.rcParams['font.family'] = ' Times New Roman, SimSun'
         else:
             print("fashion type input error, which can only selected as IEEE or GB")
             raise TypeError
@@ -101,7 +108,7 @@ class FigFon:
         plt.figlegend(handles, labels,
                       loc="lower center",
                       # loc="lower right",
-                      bbox_to_anchor=(0.5, -0.03,0.1,0.1),
+                      bbox_to_anchor=(0.5, -0.03, 0.1, 0.1),
                       ncol=RowVolumn,
                       frameon=False)
 
@@ -117,5 +124,5 @@ class FigFon:
     def update_figure(self):
         pass
 
-
-
+    def set_color_cycle(self, name):
+        plt.rcParams['axes.prop_cycle'] = plt.cycler('color', colorsets[name])
