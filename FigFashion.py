@@ -3,7 +3,7 @@ from typing import List, Literal
 import numpy as np
 from matplotlib import rcParams
 import os, sys
-from colors import colorsets
+from .colors import colorsets
 
 root = os.path.dirname(os.path.abspath(__file__))
 
