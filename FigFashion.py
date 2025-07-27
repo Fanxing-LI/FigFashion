@@ -3,7 +3,7 @@ from typing import List, Literal
 import numpy as np
 from matplotlib import rcParams
 import os, sys
-from colors import colorsets
+from .colors import colorsets
 
 root = os.path.dirname(os.path.abspath(__file__))
 
@@ -108,7 +108,7 @@ class FigFon:
         plt.figlegend(handles, labels,
                       loc="lower center",
                       # loc="lower right",
-                      bbox_to_anchor=(0.5, -0.03, 0.1, 0.1),
+                      bbox_to_anchor=(0.45, -0.03, 0.1, 0.1),
                       ncol=RowVolumn,
                       frameon=False)
 
